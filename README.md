@@ -1,6 +1,6 @@
 # swinston
 
-Winston based logger for NodeJS applications with some default options set (Console only, loggerName prefix and log level set by ENV).
+Winston based logger for NodeJS applications with some default options set (Console only, timestamp + loggerName prefix and log level set by ENV).
 
 ## Features
 
