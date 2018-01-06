@@ -1,6 +1,6 @@
 {
   "name": "swinston",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Winston based logger for NodeJS applications with some default options set (Console only, timestamp + loggerName prefix and log level set by ENV).",
   "main": "index.js",
   "scripts": {
