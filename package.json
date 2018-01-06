@@ -4,7 +4,7 @@
   "description": "Winston based logger for NodeJS applications. Adds current file name to log outputs and defines log level by ENV LOGGER_LEVEL variable. Created mainly for container based NodeJS applications.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",

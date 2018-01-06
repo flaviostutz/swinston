@@ -9,14 +9,36 @@ const logger = new winston.Logger({
     ]
 });
 
+logger.setLoggerName = function(loggerName) {
+    let ln = '';
+    if(loggerName!=null) {
+        ln = loggerName + ': ';
+    }
+
+    logger.filters = [function (level, msg, meta) {
+        return ln + msg;
+    }];
+}
+
+//gather default loggerName
+let loggerName = null;
 e = new Error();
-let file = e.stack.split('\n')[2];
-
-const folder = file.match(/.*\/(.*)\//)[1];
-const fn = folder + '/' + file.match(/(\w+\.\w+)/)[1];
-
-logger.filters.push(function (level, msg, meta) {
-    return fn + ': ' + msg;
+const stacks = e.stack.split('\n');
+stacks.forEach(function(line) {
+    if (line.indexOf('swinston/index.js') == -1) {
+        let folder = line.match(/.*\/(.*)\//);
+        if (folder != null && folder.length > 1) {
+            folder = folder[1];
+            let fn = line.match(/(\w+\.\w+)/);
+            if (fn != null && fn.length > 1) {
+                loggerName = folder + '/' + fn[1];
+                logger.setLoggerName(loggerName);
+            }
+        }
+    }
 });
+if (loggerName==null) {
+    console.debug('swinston: couldn\'t not get default logger name');
+}
 
 module.exports = logger;
