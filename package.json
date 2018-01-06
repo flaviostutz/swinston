@@ -1,0 +1,22 @@
+{
+  "name": "swinston",
+  "version": "1.0.0",
+  "description": "Winston based logger for NodeJS applications. Adds current file name to log outputs and defines log level by ENV LOGGER_LEVEL variable. Created mainly for container based NodeJS applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flaviostutz/swinston.git"
+  },
+  "author": "Flavio Stutz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flaviostutz/swinston/issues"
+  },
+  "homepage": "https://github.com/flaviostutz/swinston#readme",
+  "dependencies": {
+    "winston": "^2.4.0"
+  }
+}
