@@ -25,7 +25,7 @@ let loggerName = null;
 e = new Error();
 const stacks = e.stack.split('\n');
 stacks.forEach(function(line) {
-    if (line.indexOf('swinston/index.js') == -1) {
+    if (line.indexOf('swinston/index.js') == -1 && loggerName==null) {
         let folder = line.match(/.*\/(.*)\//);
         if (folder != null && folder.length > 1) {
             folder = folder[1];
