@@ -10,7 +10,7 @@ const logger = new winston.Logger({
 });
 
 e = new Error();
-let file = e.stack.split('\n')[1];
+let file = e.stack.split('\n')[2];
 
 const folder = file.match(/.*\/(.*)\//)[1];
 const fn = folder + '/' + file.match(/(\w+\.\w+)/)[1];
